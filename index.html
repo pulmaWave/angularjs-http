@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API request</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+      integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.js"></script>
+    <script src="/create.js"></script>
+    <script src="/update.js"></script>
+    <script src="/delete.js"></script>
+    <script src="/getOne.js"></script>
+    <script src="/getAll.js"></script>
+    <script src="/form.js"></script>
+    <link rel="stylesheet" href="/loader.css"></link>
+    <style>
+      a {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #e7e7e7;
+        color: black;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: #cacaca;
+      }
+
+      a:active {
+        background-color: #a5a5a5;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp">
+    <div>
+      <h3>APIs at Dummy: https://dummy.restapiexample.com/</h3>
+      <div>
+          <a href="#/main">Home</a>
+          <a href="#!/create">Create employee</a>
+          <a href="#!/update">Update employee</a>
+          <a href="#!/delete">Delete employee</a>
+          <a href="#!/get-one">Get one employee</a>
+          <a href="#!/get-all">Get all employees</a>
+      </div>
+      <div ng-view></div>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>
