@@ -29,66 +29,50 @@ angular
         templateUrl: "pageNotFound.html",
       });
   })
-  .controller("myApp", function ($scope, $http) {
-    $scope.data = { name: "", salary: "", age: "" };
-    $scope.payloadData = angular.copy($scope.data);
-    $scope.createSubmit = function (data) {
-      console.log("payload data", angular.copy($scope.data));
-      $http.post("https://dummy.restapiexample.com/api/v1/create", data).then(
+  .service("http", function ($http) {
+    this.post = function (url, data) {
+      $http({ method: "POST", url: url, data: data }).then(
         function (response) {
-          console.log(response);
+          return response;
         },
         function (error) {
-          console.log("error", error.message);
+          return error;
         }
       );
     };
-    $scope.updateSubmit = function (id) {
-      $http
-        .put(
-          "https://dummy.restapiexample.com/api/v1/update/" + id,
-          $scope.payloadData
-        )
-        .then(
-          function (response) {
-            console.log(response);
-          },
-          function (error) {
-            console.log("error", error.message);
-          }
-        );
+  })
+  .controller("myApp", function ($scope, $http) {
+    $scope.createSubmit = function (data) {
+      console.log("payload data", data);
+      $scope.response = angular.copy(data);
+      $http({
+        method: "POST",
+        url: "https://dummyjson.com/users/add",
+        data: data,
+      }).then(function (res) {
+        $scope.response = angular.copy(res);
+        console.log("response", ($scope.response = angular.copy(res)));
+      });
+    };
+    $scope.updateSubmit = function (data) {
+      console.log("payload data", data);
+      $http({
+        method: "PUT",
+        url: "https://dummyjson.com/users/1",
+        data: data,
+      }).then(function (res) {
+        $scope.response = angular.copy(res);
+        console.log("response", ($scope.response = angular.copy(res)));
+      });
     };
     $scope.getOneSubmit = function () {
-      $http
-        .get("https://dummy.restapiexample.com/api/v1/employee/" + 1105)
-        .then(
-          function (response) {
-            console.log(response);
-          },
-          function (error) {
-            console.log("error", error.message);
-          }
-        );
+      console.log("get one user", users);
+      // var user = users.get({ id: $scope.id }, function () {
+      //   $scope.user = user;
+      // });
     };
   })
   .component("employeeForm", {
     templateUrl: "form.html",
     bindings: { title: "@", submit: "=" },
-    // controller: function ($scope, $http) {
-    //   $scope.data = { name: "", salary: "", age: "" };
-    //   $scope.payloadData = angular.copy($scope.data);
-    //   $scope.createSubmit = function () {
-    //     console.log(123);
-    //     $scope.payloadData = $http
-    //       .post("https://dummy.restapiexample.com/api/v1/create", $scope.data)
-    //       .then(
-    //         function (response) {
-    //           console.log(response);
-    //         },
-    //         function (error) {
-    //           console.log("error", error.status);
-    //         }
-    //       );
-    //   };
-    // },
   });

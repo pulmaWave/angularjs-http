@@ -50,28 +50,29 @@
       <h3 class="title">{{$ctrl.title}}</h3>
       <form>
         <div class="field-form">
-          Name:
+          First name:
           <input
             type="text"
-            ng-model="payloadData.name"
-            placeholder="Alex Nguyen"
+            ng-model="payloadData.firstName"
+            placeholder="Hanbiro"
           />
         </div>
         <div class="field-form">
-          Salary:<input
+          Last name:<input
             type="text"
-            ng-model="payloadData.salary"
-            placeholder="1000000"
+            ng-model="payloadData.lastName"
+            placeholder="Nguyen"
           />
         </div>
         <div class="field-form">
           Age:<input type="text" ng-model="payloadData.age" placeholder="25" />
         </div>
-        <button type="submit" ng-click="$ctrl.submit()">Submit</button>
+        <button ng-click="$ctrl.submit(payloadData)">Submit</button>
       </form>
       <br />
       <br />
       <div>Payload data: {{payloadData}}</div>
+      <div>Response data: {{response}}</div>
     </div>
   </body>
 </html>
