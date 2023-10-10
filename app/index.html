@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,16 +10,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-resource.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-resource.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.js"></script>
-    <script src="/create.js"></script>
-    <script src="/update.js"></script>
-    <script src="/delete.js"></script>
-    <script src="/getOne.js"></script>
-    <script src="/getAll.js"></script>
-    <script src="/form.js"></script>
-    <script src="/services.js"></script>
-    <link rel="stylesheet" href="/loader.css"></link>
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.config.js"></script>
+    <script src="/app/index.js"></script>
     <style>
       a {
         display: inline-block;
@@ -38,19 +33,16 @@
       }
     </style>
   </head>
-  <body ng-app="myApp">
+  <body>
     <div>
       <h3>APIs at Dummy: https://dummy.restapiexample.com/</h3>
       <div>
-          <a href="#/main">Home</a>
-          <a href="#!/create">Create employee</a>
-          <a href="#!/update">Update employee</a>
-          <a href="#!/delete">Delete employee</a>
-          <a href="#!/get-one">Get one employee</a>
-          <a href="#!/get-all">Get all employees</a>
+        <a href="#/main">Home</a>
+        <a href="#!/get-all">Users list</a>
+        <a href="#!/create">Create employee</a>
       </div>
-      <div ng-view></div>
     </div>
-    <script src="/index.js"></script>
+
+    <div ng-view></div>
   </body>
 </html>
