@@ -1,0 +1,14 @@
+<div ng-init="count = false">
+  <button ng-click="count = !count">New author</button>
+  <div class="authorForm" ng-if="count">
+    <author-form
+      title="New author"
+      submit="$ctrl.newAuthorSubmit"
+    ></author-form>
+  </div>
+  <div ng-repeat="author in $ctrl.authors" class="author-list">
+    <p>{{author.id}}</p>
+    <p>{{author.firstName}}</p>
+    <p>{{author.lastName}}</p>
+  </div>
+</div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API request</title>
+    <link rel="stylesheet" href="/app/app.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
       integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
@@ -14,7 +15,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.js"></script>
     <script src="/app/app.module.js"></script>
     <script src="/app/app.config.js"></script>
-    <script src="/app/index.js"></script>
+    <script src="/app/core/core.module.js"></script>
+    <script src="/app/core/author/author.module.js"></script>
+    <script src="/app/core/author/author.service.js"></script>
+    <script src="/app/author-list//author-list.module.js"></script>
+    <script src="/app/author-list/author-list.component.js"></script>
+    <script src="/app/author-form/author-form.module.js"></script>
+    <script src="/app/author-form/author-form.component.js"></script>
     <style>
       a {
         display: inline-block;
@@ -37,12 +44,10 @@
     <div>
       <h3>APIs at Dummy: https://dummy.restapiexample.com/</h3>
       <div>
-        <a href="#/main">Home</a>
-        <a href="#!/get-all">Users list</a>
-        <a href="#!/create">Create employee</a>
+        <a href="#/">Home</a>
+        <a href="#!/authors">Author list</a>
       </div>
     </div>
-
     <div ng-view></div>
   </body>
 </html>

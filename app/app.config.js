@@ -3,25 +3,11 @@ angular.module("myApp").config(function ($routeProvider) {
     .when("/", {
       templateUrl: "home.html",
     })
-    .when("/create", {
-      templateUrl: "create.html",
-      // controller: "createCtrl",
+    .when("/authors", {
+      templateUrl: "/app/author-list/author-list.template.html",
     })
-    .when("/update", {
-      templateUrl: "update.html",
-      // controller: "updateCtrl",
-    })
-    .when("/delete", {
-      templateUrl: "delete.html",
-      // controller: "deleteCtrl",
-    })
-    .when("/get-one", {
-      templateUrl: "getOne.html",
-      // controller: "getOneCtrl",
-    })
-    .when("/get-all", {
-      templateUrl: "getAll.html",
-      // controller: "getAllCtrl",
+    .when("/authors/:id", {
+      templateUrl: "/app/author-detail/author-detail.template.html",
     })
     .otherwise({
       templateUrl: "pageNotFound.html",

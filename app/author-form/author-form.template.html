@@ -1,0 +1,28 @@
+<div class="author-form">
+  <h3 class="title">{{$ctrl.title}}</h3>
+  <form>
+    <div class="field-form">
+      First name:
+      <input
+        type="text"
+        ng-model="payloadData.firstName"
+        placeholder="Hanbiro"
+      />
+    </div>
+    <div class="field-form">
+      Last name:<input
+        type="text"
+        ng-model="payloadData.lastName"
+        placeholder="Nguyen"
+      />
+    </div>
+    <div class="field-form">
+      Age:<input type="text" ng-model="payloadData.age" placeholder="25" />
+    </div>
+    <button ng-click="$ctrl.submit()">Submit</button>
+  </form>
+  <br />
+  <br />
+  <div>Payload data: {{payloadData}}</div>
+  <div>Response data: {{response}}</div>
+</div>

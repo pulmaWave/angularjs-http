@@ -1,0 +1,29 @@
+.authorForm {
+    position: fixed;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+.author-form {
+    width: 500px;
+    max-width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.field-form {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.field-form input {
+    width: 80%;
+    height: 25px;
+}
+
+.title {
+    text-align: center;
+}

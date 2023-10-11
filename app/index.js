@@ -47,7 +47,7 @@ angular
       $scope.response = angular.copy(data);
       $http({
         method: "POST",
-        url: "https://dummyjson.com/users/add",
+        url: "https://dummyjson.com/authors/add",
         data: data,
       }).then(function (res) {
         $scope.response = angular.copy(res);
@@ -58,7 +58,7 @@ angular
       console.log("payload data", data);
       $http({
         method: "PUT",
-        url: "https://dummyjson.com/users/1",
+        url: "https://dummyjson.com/authors/1",
         data: data,
       }).then(function (res) {
         $scope.response = angular.copy(res);
@@ -66,13 +66,13 @@ angular
       });
     };
     $scope.getOneSubmit = function () {
-      console.log("get one user", users);
-      // var user = users.get({ id: $scope.id }, function () {
-      //   $scope.user = user;
+      console.log("get one author", authors);
+      // var author = authors.get({ id: $scope.id }, function () {
+      //   $scope.author = author;
       // });
     };
   })
-  .component("employeeForm", {
+  .component("authorForm", {
     templateUrl: "form.html",
     bindings: { title: "@", submit: "=" },
   });
