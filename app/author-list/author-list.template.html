@@ -11,15 +11,17 @@
     </div>
     <table>
       <tr>
+        <th>No.</th>
         <th>ID</th>
         <th>First name</th>
         <th>Last name</th>
         <th>Action</th>
       </tr>
       <tr ng-repeat="author in authors">
+        <td>{{authors.indexOf(author) + 1}}</td>
         <td><a href="#!/authors/{{author.id}}">{{author.id}}</a></td>
-        <td>{{author.firstName}}</td>
-        <td>{{author.lastName}}</td>
+        <td><a href="#!/authors/{{author.id}}">{{author.firstName}}</a></td>
+        <td><a href="#!/authors/{{author.id}}">{{author.lastName}}</a></td>
         <td>
           <button ng-click="showFormUpdateClick(author.id)">Update</button>
           <button ng-click="authorDelete(author.id)">Delete</button>
