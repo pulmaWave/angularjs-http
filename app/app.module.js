@@ -1,1 +1,7 @@
-angular.module("myApp", ["ngRoute", "core", "authorList", "authorForm"]);
+angular.module("myApp", [
+  "ngRoute",
+  "core",
+  "authorList",
+  "authorForm",
+  "authorDetail",
+]);

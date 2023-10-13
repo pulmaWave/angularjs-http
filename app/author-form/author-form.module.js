@@ -1,1 +1,1 @@
-angular.module("authorForm", []);
+var authorFormModule = angular.module("authorForm", ["ngRoute"]);

@@ -1,1 +1,1 @@
-angular.module("author-detail");
+angular.module("authorDetail", ["ngRoute"]);

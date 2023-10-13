@@ -1,14 +1,39 @@
-<div ng-init="count = false">
-  <button ng-click="count = !count">New author</button>
-  <div class="authorForm" ng-if="count">
-    <author-form
-      title="New author"
-      submit="$ctrl.newAuthorSubmit"
-    ></author-form>
-  </div>
-  <div ng-repeat="author in $ctrl.authors" class="author-list">
-    <p>{{author.id}}</p>
-    <p>{{author.firstName}}</p>
-    <p>{{author.lastName}}</p>
+<div ng-controller="authorListCtrl">
+  <div>
+    <button ng-click="isNewAuthor = !isNewAuthor">New author</button>
+    <div class="authorForm" ng-if="isNewAuthor">
+      <author-form
+        title="New author"
+        submit="newAuthorSubmit"
+        btnName="Create"
+        cancel="closeForm"
+      ></author-form>
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Action</th>
+      </tr>
+      <tr ng-repeat="author in authors">
+        <td><a href="#!/authors/{{author.id}}">{{author.id}}</a></td>
+        <td>{{author.firstName}}</td>
+        <td>{{author.lastName}}</td>
+        <td>
+          <button ng-click="showFormUpdateClick(author.id)">Update</button>
+          <button ng-click="authorDelete(author.id)">Delete</button>
+        </td>
+      </tr>
+      <div class="authorForm">
+        <author-form
+          ng-if="isUpdateAuthor"
+          title="Update author"
+          submit="authorUpdate"
+          btnName="Update"
+          cancel="closeForm"
+        ></author-form>
+      </div>
+    </table>
   </div>
 </div>

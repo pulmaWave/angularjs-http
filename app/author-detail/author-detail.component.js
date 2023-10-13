@@ -1,10 +1,10 @@
-angular.module("author-detail").component("authorDetail", {
-  templateUrl: "author-detail/author-detail.template.html",
-  controller: [
-    "$routeParams",
-    "Author",
-    function authorDetailController($routeParams, Author) {
-      this.author = Author.get({ id: $routeParams.id });
-    },
-  ],
-});
+angular
+  .module("authorDetail")
+  .component("authorDetail", {
+    templateUrl: "author-detail/author-detail.template.html",
+  })
+  .controller("authorDetailCtrl", function ($scope, Author, $routeParams) {
+    Author.get($routeParams.id).then(function (data) {
+      $scope.author = data;
+    });
+  });

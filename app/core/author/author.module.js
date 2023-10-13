@@ -1,1 +1,1 @@
-angular.module("core.author", ["ngResource"]);
+angular.module("core.author", []);

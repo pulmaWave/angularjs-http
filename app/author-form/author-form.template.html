@@ -3,26 +3,20 @@
   <form>
     <div class="field-form">
       First name:
-      <input
-        type="text"
-        ng-model="payloadData.firstName"
-        placeholder="Hanbiro"
-      />
+      <input type="text" ng-model="author.firstName" placeholder="Hanbiro" />
     </div>
     <div class="field-form">
       Last name:<input
         type="text"
-        ng-model="payloadData.lastName"
+        ng-model="author.lastName"
         placeholder="Nguyen"
       />
     </div>
     <div class="field-form">
-      Age:<input type="text" ng-model="payloadData.age" placeholder="25" />
+      ID:<input type="text" ng-model="author.id" placeholder="25" />
     </div>
-    <button ng-click="$ctrl.submit()">Submit</button>
+    <button ng-click="$ctrl.submit(author)">Submit</button>
+    <button ng-click="$ctrl.cancel()">Cancel</button>
   </form>
   <br />
-  <br />
-  <div>Payload data: {{payloadData}}</div>
-  <div>Response data: {{response}}</div>
 </div>

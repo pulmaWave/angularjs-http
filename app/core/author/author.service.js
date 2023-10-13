@@ -1,29 +1,50 @@
+var url = "https://fakerestapi.azurewebsites.net/api/v1/Authors/";
 angular.module("core.author").service("Author", function ($http) {
   return {
-    get: function () {
+    getAll: function () {
       return $http({
         method: "GET",
-        url: "https://fakerestapi.azurewebsites.net/api/v1/Authors",
-      });
+        url: url,
+      }).then(
+        function (response) {
+          return response.data;
+        },
+        function (error) {
+          return error;
+        }
+      );
+    },
+    get: function (id) {
+      return $http({
+        method: "GET",
+        url: url + id,
+      }).then(
+        function (response) {
+          return response.data;
+        },
+        function (error) {
+          return error;
+        }
+      );
     },
     post: function (data) {
       return $http({
         method: "POST",
-        url: "https://fakerestapi.azurewebsites.net/api/v1/Authors",
-        data: data,
+        url,
+        data,
       });
     },
     put: function (id, data) {
       return $http({
         method: "PUT",
-        url: "https://fakerestapi.azurewebsites.net/api/v1/Authors/" + id,
-        data: data,
+        url: url + id,
+        data,
       });
     },
     delete: function (id) {
       return $http({
         method: "DELETE",
-        url: "https://fakerestapi.azurewebsites.net/api/v1/Authors/" + id,
+        url: url + id,
       });
     },
   };
