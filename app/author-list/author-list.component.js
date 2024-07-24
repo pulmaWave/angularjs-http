@@ -4,12 +4,11 @@ angular.module("authorList").component("authorList", {
     "Author",
     function authorListController() {
       var self = this;
-      self.author = Author.get();
+      self.authors = Author.get();
       console.log("Call author list");
       self.newAuthorSubmit = function newAuthorSubmit() {
         console.log("author-list");
       };
     },
   ],
-  // controllerAs: "ctrl",
 });
